@@ -1,16 +1,24 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p>
+    {{myVariable}}
+  </p>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return{
+      myVariable: "Hello World",
+    }
+  },
+  mounted(){
+    console.log(this.myVariable)
+  },
+
 }
 </script>
 
