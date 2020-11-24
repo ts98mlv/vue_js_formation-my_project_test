@@ -1,8 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <p>
-    {{myVariable}}
-  </p>
+  <img alt="Vue logo" src="./assets/logo.png"><br>
+  <input type="text" v-model="myVariable">
+  <p>{{myVariable}}</p>
 </template>
 
 <script>
@@ -12,12 +11,12 @@ export default {
   name: 'App',
   data() {
     return{
-      myVariable: "Hello World",
+      myVariable: undefined,
     }
   },
-  mounted(){
+/*  mounted(){
     console.log(this.myVariable)
-  },
+  },*/
 
 }
 </script>
