@@ -1,7 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png"><br>
   <input type="text" v-model="myVariable">
-  <p>{{myVariable}}</p>
+  <p v-if="show">{{myVariable}}</p>
+  <p v-else>{{errorMsg}}</p>
+
+  <input type="checkbox" name="check" id="check" v-model="show">
 </template>
 
 <script>
@@ -12,6 +15,8 @@ export default {
   data() {
     return{
       myVariable: undefined,
+      show: false,
+      errorMsg : "There is no variable"
     }
   },
 /*  mounted(){
