@@ -12,7 +12,7 @@
   <br>
   <p>Liste d'objets</p>
   <ul>
-    <li v-for="(element, index) in objectListe" v-bind:key="index" v-show="element.show">{{index}}</li>
+    <li v-for="(element, index) in objectListe" v-bind:key="index" v-show="element.show" v-bind:style="{color : element.color}">{{index}}</li>
   </ul>
 
 </template>
@@ -30,14 +30,16 @@ export default {
       liste: ["Banane", "Kiwi", "Fraise"],
       objectListe:{
         "Banane" : {
-            show: true
+            show: false,
+          color: "yellow"
         },
         "Kiwi" : {
-          show: false
-
+          show: true,
+          color: "green"
         },
         "Fraise" : {
-          show: true
+          show: true,
+          color: "red"
 
         }
       }
