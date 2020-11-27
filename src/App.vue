@@ -12,7 +12,7 @@
   <br>
   <p>Liste d'objets</p>
   <ul>
-    <li v-for="(element, index) in objectListe" v-bind:key="index" v-show="element.show" v-bind:style="{color : element.color}">{{index}}</li>
+    <li v-bind:class="{'bgColor' : element.bgGrey}" v-for="(element, index) in objectListe" v-bind:key="index" v-show="element.show">{{index}}</li>
   </ul>
 
 </template>
@@ -31,15 +31,15 @@ export default {
       objectListe:{
         "Banane" : {
             show: false,
-          color: "yellow"
+            bgGrey: true
         },
         "Kiwi" : {
           show: true,
-          color: "green"
+          bgGrey: false
         },
         "Fraise" : {
           show: true,
-          color: "red"
+          bgGrey: true
 
         }
       }
@@ -60,5 +60,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.bgColor{
+  background-color: grey;
 }
 </style>
