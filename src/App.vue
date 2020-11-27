@@ -14,6 +14,14 @@
   <ul>
     <li v-bind:class="{'bgColor' : element.bgGrey}" v-for="(element, index) in objectListe" v-bind:key="index" v-show="element.show">{{index}}</li>
   </ul>
+  
+  <div id="fonctions">
+    <label for="clog">Console log : </label>
+    <input type="text" id="clog" @input="logThis" v-model="cloged">
+
+    <br><button name="clickMe" @click="clickedButton">Click me !</button>
+    <p>{{count}}</p>
+  </div>
 
 </template>
 
@@ -42,8 +50,26 @@ export default {
           bgGrey: true
 
         }
-      }
+      },
+      cloged : undefined,
+      clickedbuttonValue: "Hello World",
+      count : 0
     }
+  },
+  methods: {
+    logThis(){
+      console.log(this.cloged)
+    },
+    clickedButton(){
+      console.log(this.clickedbuttonValue);
+      this.counting();
+    },
+    counting(){
+      this.count ++
+    }
+  },
+  computed: {
+
   },
 /*  mounted(){
     console.log(this.myVariable)
